@@ -1,4 +1,4 @@
-package com.journal;
+package com.journal.web.entity;
 
 public class User {
 	private Long id;
