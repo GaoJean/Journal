@@ -1,4 +1,4 @@
-package com.journal.web;
+package com.journal;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
