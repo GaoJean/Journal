@@ -1,5 +1,7 @@
 package com.journal.common.constant;
-
+/**
+ * Created by GaoJean on 2017/10/26.
+ */
 public enum SystemEnum {
     token_expire(100,"token验证失败，请重新登录!"),
 	success_200(200,"执行成功!"),

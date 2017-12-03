@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.journal.common.constant.BusinessConstant;
+import com.journal.common.constant.Constant;
 import com.journal.common.constant.SystemEnum;
 import com.journal.common.exception.ReLoginException;
 import com.journal.common.exception.TokenException;
@@ -27,7 +27,7 @@ import com.journal.web.model.ResultModelMetadata;
 
 
 /**
- * App后台入口切面
+ * 入口切面
  * 
  */
 @Component
@@ -39,7 +39,7 @@ public class VerificationAspect {
     /**
      * 所有appserver请求都加入此切面
      */
-    @Pointcut("execution(public * com.danlu.appserver.web.ws.controller..*.*(..)) || execution(public * com.danlu.pos.web.controller..*.*(..))")
+    @Pointcut("execution(public * com.journal.web.controller..*.*(..))")
     public void pointcut() {
     }
 
@@ -137,7 +137,7 @@ public class VerificationAspect {
         HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
         HttpSession session = request.getSession();
         String tokenCache = (String)session.getAttribute(
-        		BusinessConstant.SESSION_AND_COOKIE.SESSION_TOKEN);
+        		Constant.SESSION_AND_COOKIE.SESSION_TOKEN);
         if (token == null) {
             // 取不到Session 认为Session失效 要求重新登陆
             throw new ReLoginException();

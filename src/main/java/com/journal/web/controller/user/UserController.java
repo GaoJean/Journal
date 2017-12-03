@@ -1,30 +1,47 @@
 package com.journal.web.controller.user;
 
-import io.swagger.annotations.ApiOperation;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.journal.web.entity.User;
+import com.journal.common.verify.Verification;
+import com.journal.web.adaptor.user.UserAdaptor;
+import com.journal.web.entity.request.user.LoginRequest;
+import com.journal.web.entity.response.user.LoginResponse;
+import com.journal.web.model.ResultModel;
+
+import io.swagger.annotations.ApiOperation;
 
 /**
- * Created by Jianjian on 2017/12/1.
+ * @author: GaoJean
+ * @ClassName: UserController
+ * @Description: 用户
+ * @date: 2017/10/28
  */
 @RestController  
 @RequestMapping(value="/user")
 public class UserController {
-	static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
-	 @ApiOperation(value="获取用户信息", notes="")
-	    @RequestMapping(value={""}, method=RequestMethod.GET)
-	    public List<User> getUserList() {
-	        List<User> r = new ArrayList<User>(users.values());
-	        return r;
-	    }
+
+	@Resource
+	private UserAdaptor userAdaptor;
+
+	@ApiOperation(value="登录", notes="登录",response =LoginResponse.class)
+	@RequestMapping(value = "/login" , method = RequestMethod.POST)
+	@ResponseBody
+    @Verification(token = false)
+	public ResultModel login(@RequestBody LoginRequest loginRequest, HttpServletRequest request){
+		ResultModel resultModel = new ResultModel();
+		LoginResponse loginResponse = new LoginResponse();
+		String username = loginRequest.getUsername();
+		String password = loginRequest.getPassword();
+		String result = userAdaptor.login(username,password,request,loginResponse);
+		loginResponse.setSuccess(result);
+		resultModel.setModel(loginResponse);
+		return resultModel;
+	}
 }
