@@ -2,7 +2,9 @@ package com.journal.web.dao.dao;
 
 
 import com.journal.web.dao.dto.JournalDTO;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface JournalDao {
     int deleteByPrimaryKey(String journalId);
 

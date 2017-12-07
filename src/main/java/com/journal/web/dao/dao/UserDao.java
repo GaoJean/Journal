@@ -6,10 +6,13 @@ import com.journal.web.dao.dto.UserDTO;
 import java.util.List;
 import java.util.Map;
 
+import org.mapstruct.Mapper;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component 
+@Component(value = "userDao")
+@Mapper
 public interface UserDao {
     int deleteByPrimaryKey(String userId);
 

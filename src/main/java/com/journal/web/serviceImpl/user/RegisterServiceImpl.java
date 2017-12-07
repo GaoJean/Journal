@@ -1,13 +1,14 @@
 package com.journal.web.serviceImpl.user;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.journal.web.dao.dao.RegisterDao;
 import com.journal.web.dao.dto.RegisterDTO;
 import com.journal.web.service.user.RegisterService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author: GaoJean
@@ -15,23 +16,23 @@ import com.journal.web.service.user.RegisterService;
  * @Description: 注册实现类
  * @date: 2017/10/30
  */
-@Component 
+@Service("registerService")
 public class RegisterServiceImpl implements RegisterService {
 
-    @Autowired
+   /* @Autowired
     private RegisterDao registerDao;
-
-    @Override
+*/
     public int addRegisterRecord(RegisterDTO registerExt) {
-        return registerDao.insertSelective(registerExt);
+//        return registerDao.insertSelective(registerExt);
+        return 1;
     }
 
     @Override
     public List<RegisterDTO> getRegisterRecords(List<RegisterDTO> paramList) {
         List<RegisterDTO> registerExtList = null;
-        for (RegisterDTO registerExt : paramList){
+        /*for (RegisterDTO registerExt : paramList){
             registerExtList = registerDao.selectRegisterList(registerExt);
-        }
+        }*/
         return registerExtList;
     }
 

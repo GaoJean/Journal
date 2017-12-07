@@ -4,11 +4,15 @@ package com.journal.web.dao.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.mapstruct.Mapper;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 import com.journal.web.dao.dto.RegisterDTO;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Component(value = "registerDao")
+@Mapper
 public interface RegisterDao {
     int deleteByPrimaryKey(String rehisterId);
 

@@ -2,11 +2,7 @@ package com.journal.web.controller.journal;
 
 import javax.annotation.Resource;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.journal.common.verify.Verification;
 import com.journal.web.adaptor.journal.JournalAdaptor;
@@ -36,8 +32,7 @@ public class JournalController {
      * @return
      */
     @ApiOperation(value="编写日志", notes="编写日志",response =BaseResponse.class)
-    @RequestMapping(value = "/writeJournal" ,method = RequestMethod.POST)
-    @ResponseBody
+    @PostMapping(value = "/writeJournal")
     @Verification
     public ResultModel writeJournal(@RequestBody WriteJournalRequest request){
         BaseResponse response = new BaseResponse();
@@ -52,8 +47,7 @@ public class JournalController {
      * @return
      */
     @ApiOperation(value="获得所有的日志", notes="获得所有的日志",response =BaseResponse.class)
-    @RequestMapping(value = "/getAllJournals",method = RequestMethod.POST)
-    @ResponseBody
+    @PostMapping(value = "/getAllJournals")
     @Verification
     public ResultModel getAllJournals(@RequestBody GetAllJournalsRequest request){
 

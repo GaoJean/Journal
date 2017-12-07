@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -20,6 +21,8 @@ import com.journal.web.entity.response.user.GetRegisterListResponse;
 import com.journal.web.entity.response.user.GetRegisterListResponse.RegisterModel;
 import com.journal.web.service.user.RegisterService;
 import com.journal.web.service.user.UserService;
+
+import javax.annotation.Resource;
 
 /**
  * @author: GaoJean
@@ -38,13 +41,13 @@ public class RegisterAdaptor {
 
     //注册
     public String userRegister(RegisterRequest registerRequest) {
-        String userAccount = registerRequest.getUserAccount();
+        /*String userAccount = registerRequest.getUserAccount();
         String userTel = registerRequest.getUserTel();
         String userPassword = registerRequest.getUserPassword();
         if (StringUtils.isEmpty(userAccount) || StringUtils.isEmpty(userPassword) || StringUtils.isEmpty(userTel)) {
             return Constant.ServiceCode.CODE_2;
         }
-        List<RegisterDTO> paramList = new ArrayList<>();
+        List<RegisterDTO> paramList = new ArrayList<RegisterDTO>();
         RegisterDTO param = new RegisterDTO();
         param.setUserPassword(userPassword);
         param.setUserAccount(userAccount);
@@ -66,13 +69,13 @@ public class RegisterAdaptor {
         if (result == 0) {
             return Constant.ServiceCode.CODE_1;
         }
-        return Constant.ServiceCode.CODE_0;
+*/        return Constant.ServiceCode.CODE_0;
 
     }
 
     //获取注册列表
     public String getRegisterList(GetRegisterListResponse getRegisterListResponse) {
-        List<RegisterDTO> paramList = new ArrayList<>();
+       /* List<RegisterDTO> paramList = new ArrayList<RegisterDTO>();
         RegisterDTO param = new RegisterDTO();
         param.setRegisterStatus(Constant.APPROVAL_STATUS.APPROVAL_PENDING);
         paramList.add(param);
@@ -80,22 +83,22 @@ public class RegisterAdaptor {
         if (registerExt1 == null || registerExt1.isEmpty()) {
             return Constant.ServiceCode.CODE_1;
         }
-        List<RegisterModel> registerList = new ArrayList<>();
+        List<RegisterModel> registerList = new ArrayList<RegisterModel>();
         RegisterModel registerModel = null;
         for (RegisterDTO registerExt : registerExt1) {
             registerModel = new RegisterModel();
             BeanUtils.copyProperties(registerExt, registerModel);
             registerList.add(registerModel);
         }
-        getRegisterListResponse.setRegisterList(registerList);
+        getRegisterListResponse.setRegisterList(registerList);*/
         return Constant.ServiceCode.CODE_0;
     }
 
     //审批
     public String auitRegister(AuitRegisterRequest auitRegisterRequest) {
-        List<AuitRegister> auitRegisters = auitRegisterRequest.getAuitRegisterList();
-        List<String> registerIdList = new ArrayList<>();
-        List<UserDTO> userExtList = new ArrayList<>();
+        /*List<AuitRegister> auitRegisters = auitRegisterRequest.getAuitRegisterList();
+        List<String> registerIdList = new ArrayList<String>();
+        List<UserDTO> userExtList = new ArrayList<UserDTO>();
         UserDTO userExt = null;
         for (AuitRegister auitRegister : auitRegisters) {
             registerIdList.add(auitRegister.getRehisterId());
@@ -125,7 +128,7 @@ public class RegisterAdaptor {
             if (addResult != 0){
                 return Constant.ServiceCode.CODE_1;
             }
-        }
+        }*/
         return Constant.ServiceCode.CODE_0;
     }
 }

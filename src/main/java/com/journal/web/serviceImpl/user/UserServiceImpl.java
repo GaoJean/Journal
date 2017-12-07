@@ -8,7 +8,9 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.journal.common.constant.Constant;
@@ -26,14 +28,14 @@ import com.journal.web.service.user.UserService;
  * @Description: 用户实现类
  * @date: 2017/10/28
  */
-@Component 
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
-    @Resource
+    /*@Autowired
     private UserDao userDao;
 
-    @Resource
-    private RegisterDao registerDao;
+    @Autowired
+    private RegisterDao registerDao;*/
 
 
     /**
@@ -46,7 +48,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void login(String username, String password, HttpServletRequest request, LoginResponse loginResponse) {
-        if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
+        /*if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
             loginResponse.setSuccess(Constant.ServiceCode.CODE_2);
         } else {
             UserDTO userEntity = null;
@@ -69,7 +71,7 @@ public class UserServiceImpl implements UserService {
             } else {
                 loginResponse.setSuccess(Constant.ServiceCode.CODE_1);
             }
-        }
+        }*/
 
     }
 
@@ -82,12 +84,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public int addUser(List<UserDTO> userExtList) {
         int result = 1;
-        try {
+        /*try {
              result = userDao.insertUsers(userExtList);
         } catch (Exception e) {
             e.printStackTrace();
             return result;
-        }
+        }*/
         return result;
     }
 

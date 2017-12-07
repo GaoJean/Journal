@@ -2,7 +2,9 @@ package com.journal.web.dao.dao;
 
 
 import com.journal.web.dao.dto.RoleDTO;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface RoleDao {
     int deleteByPrimaryKey(String roleId);
 

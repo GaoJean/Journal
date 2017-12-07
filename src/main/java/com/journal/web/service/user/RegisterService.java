@@ -12,7 +12,6 @@ import com.journal.web.dao.dto.RegisterDTO;
  * @Description: TODO
  * @date: 2017/10/30
  */
-@Component
 public interface RegisterService {
 
     /**

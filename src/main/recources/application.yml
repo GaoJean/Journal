@@ -1,14 +1,3 @@
 server:
-port: 8081
-context-path: /journal
-#spring:
-#  datasource:
-#    hikari:
-#      data-source-class-name:
-#      jdbc-url:
-#      username:
-#      password:
-#  jpa:
-#    hibernate:
-#      ddl-auto: create
-#      show-sql: true
+  port: 8081
+  context-path: /journal

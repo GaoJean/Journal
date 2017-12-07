@@ -15,7 +15,6 @@ import com.journal.web.entity.response.user.LoginResponse;
  * @Description: TODO
  * @date: 2017/10/28
  */
-@Component
 public interface UserService {
 
     /**
