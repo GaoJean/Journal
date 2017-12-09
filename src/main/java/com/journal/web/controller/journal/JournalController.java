@@ -41,7 +41,6 @@ public class JournalController {
         return new ResultModel(response);
     }
 
-
     /**
      *
      * @param request
