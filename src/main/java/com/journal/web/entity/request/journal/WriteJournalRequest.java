@@ -1,7 +1,6 @@
 package com.journal.web.entity.request.journal;
 
 import com.journal.web.entity.BaseRequest;
-
 import lombok.Getter;
 import lombok.Setter;
 

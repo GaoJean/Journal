@@ -2,6 +2,8 @@ package com.journal.web.entity.request.user;
 
 
 import com.journal.web.entity.BaseRequest;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author: GaoJean
@@ -9,6 +11,8 @@ import com.journal.web.entity.BaseRequest;
  * @Description: TODO
  * @date: 2017/10/30
  */
+@Getter
+@Setter
 public class RegisterRequest  extends BaseRequest {
 
 
@@ -18,27 +22,4 @@ public class RegisterRequest  extends BaseRequest {
 
     private String userTel;
 
-    public String getUserAccount() {
-        return userAccount;
-    }
-
-    public void setUserAccount(String userAccount) {
-        this.userAccount = userAccount;
-    }
-
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-    }
-
-    public String getUserTel() {
-        return userTel;
-    }
-
-    public void setUserTel(String userTel) {
-        this.userTel = userTel;
-    }
 }

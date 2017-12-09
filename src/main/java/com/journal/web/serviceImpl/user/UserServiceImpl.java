@@ -1,26 +1,9 @@
 package com.journal.web.serviceImpl.user;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-
-import com.journal.common.constant.Constant;
-import com.journal.common.util.GenerateUUIDUtil;
-import com.journal.web.dao.dao.RegisterDao;
-import com.journal.web.dao.dao.UserDao;
-import com.journal.web.dao.dto.RegisterDTO;
-import com.journal.web.dao.dto.UserDTO;
 import com.journal.web.entity.response.user.LoginResponse;
 import com.journal.web.service.user.UserService;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author: GaoJean
@@ -28,16 +11,7 @@ import com.journal.web.service.user.UserService;
  * @Description: 用户实现类
  * @date: 2017/10/28
  */
-@Service("userService")
 public class UserServiceImpl implements UserService {
-
-    /*@Autowired
-    private UserDao userDao;
-
-    @Autowired
-    private RegisterDao registerDao;*/
-
-
     /**
      * 登录
      *
@@ -74,51 +48,4 @@ public class UserServiceImpl implements UserService {
         }*/
 
     }
-
-    /**
-     * 批量新增用户
-     *
-     * @param userExtList
-     * @return
-     */
-    @Override
-    public int addUser(List<UserDTO> userExtList) {
-        int result = 1;
-        /*try {
-             result = userDao.insertUsers(userExtList);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return result;
-        }*/
-        return result;
-    }
-
-    private void initLoginResponse(HttpServletRequest request, LoginResponse loginResponse) {
-        HttpSession session = request.getSession();
-        loginResponse.setUserAccount((String) session.getAttribute(Constant.SESSION_AND_COOKIE.SESSION_USER_ACCOUNT));
-        loginResponse.setUserAge((String) session.getAttribute(Constant.SESSION_AND_COOKIE.SESSION_USER_AGE));
-        loginResponse.setUserId((String) session.getAttribute(Constant.SESSION_AND_COOKIE.SESSION_USER_ID));
-        loginResponse.setUserName((String) session.getAttribute(Constant.SESSION_AND_COOKIE.SESSION_USER_NAME));
-        loginResponse.setUserPortraitUrl((String) session.getAttribute(Constant.SESSION_AND_COOKIE.SESSION_USER_PORTRAIT_URL));
-        loginResponse.setUserTel((String) session.getAttribute(Constant.SESSION_AND_COOKIE.SESSION_TEL));
-        loginResponse.setRoleId((String) session.getAttribute(Constant.SESSION_AND_COOKIE.SESSION_ROLE_ID));
-        loginResponse.setToken((String) session.getAttribute(Constant.SESSION_AND_COOKIE.SESSION_TOKEN));
-    }
-
-
-    //将用户数据保存在session中
-    private void initSession(HttpServletRequest request, UserDTO userEntity) {
-        HttpSession session = request.getSession();
-        session.setAttribute(Constant.SESSION_AND_COOKIE.SESSION_USER, userEntity);
-        session.setAttribute(Constant.SESSION_AND_COOKIE.SESSION_USER_ID, userEntity.getUserId());
-        session.setAttribute(Constant.SESSION_AND_COOKIE.SESSION_ROLE_ID, userEntity.getRoleId());
-        session.setAttribute(Constant.SESSION_AND_COOKIE.SESSION_USER_ACCOUNT, userEntity.getUserAccount());
-        session.setAttribute(Constant.SESSION_AND_COOKIE.SESSION_USER_AGE, userEntity.getUserAge());
-        session.setAttribute(Constant.SESSION_AND_COOKIE.SESSION_USER_NAME, userEntity.getUserName());
-        session.setAttribute(Constant.SESSION_AND_COOKIE.SESSION_USER_ID, userEntity.getUserPassword());
-        session.setAttribute(Constant.SESSION_AND_COOKIE.SESSION_TEL, userEntity.getUserTel());
-        session.setAttribute(Constant.SESSION_AND_COOKIE.SESSION_USER_PORTRAIT_URL, userEntity.getUserPortraitUrl());
-        session.setAttribute(Constant.SESSION_AND_COOKIE.SESSION_TOKEN, GenerateUUIDUtil.randomPK());
-    }
-
 }

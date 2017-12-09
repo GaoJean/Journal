@@ -15,13 +15,13 @@
  */
 package com.journal.common.logger;
 
+import com.journal.common.logger.slf4j.Slf4jLoggerAdapter;
+import com.journal.common.logger.support.FailsafeLogger;
+
 import java.io.File;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-
-import com.journal.common.logger.slf4j.Slf4jLoggerAdapter;
-import com.journal.common.logger.support.FailsafeLogger;
 
 
 /**

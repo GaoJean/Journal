@@ -1,10 +1,9 @@
 package com.journal.web.entity;
 
 
+import com.journal.common.constant.Constant;
 
 import java.io.Serializable;
-
-import com.journal.common.constant.Constant;
 
 
 /**

@@ -1,10 +1,10 @@
 package com.journal.common.logger.slf4j;
 
-import java.io.File;
-
 import com.journal.common.logger.Level;
 import com.journal.common.logger.Logger;
 import com.journal.common.logger.LoggerAdapter;
+
+import java.io.File;
 
 
 public class Slf4jLoggerAdapter implements LoggerAdapter {

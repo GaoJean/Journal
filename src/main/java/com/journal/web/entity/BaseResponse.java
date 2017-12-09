@@ -1,12 +1,16 @@
 package com.journal.web.entity;
 
-import java.io.Serializable;
-
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
 
 /**
  * Created by GaoJean on 2017/10/26.
  */
+@Getter
+@Setter
 public class BaseResponse implements Serializable{
     /**
      * 成功与否 0-成功 1-失败 其他-由具体接口定义
@@ -14,12 +18,5 @@ public class BaseResponse implements Serializable{
 	@ApiModelProperty(value="业务成功code")
     private String success;
 
-    public String getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(String success) {
-        this.success = success;
-    }
 
 }

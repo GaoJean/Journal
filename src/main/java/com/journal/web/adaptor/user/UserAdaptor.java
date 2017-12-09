@@ -1,6 +1,4 @@
 package com.journal.web.adaptor.user;
-import com.journal.common.util.GenerateUUIDUtil;
-import com.journal.web.dao.dto.UserDTO;
 import com.journal.web.entity.response.user.LoginResponse;
 import org.springframework.stereotype.Component;
 
@@ -56,7 +54,7 @@ public class UserAdaptor {
     }
 
 
-    //将用户数据保存在session中
+    /*//将用户数据保存在session中
     private void initSession(HttpServletRequest request, UserDTO userEntity) {
         HttpSession session = request.getSession();
         session.setAttribute(SESSION_USER, userEntity);
@@ -69,5 +67,5 @@ public class UserAdaptor {
         session.setAttribute(SESSION_TEL, userEntity.getUserTel());
         session.setAttribute(SESSION_USER_PORTRAIT_URL, userEntity.getUserPortraitUrl());
         session.setAttribute(SESSION_TOKEN, GenerateUUIDUtil.randomPK());
-    }
+    }*/
 }

@@ -1,10 +1,9 @@
 package com.journal.web.adaptor.journal;
 
-import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
-
 import com.journal.common.constant.Constant;
 import com.journal.web.entity.request.journal.WriteJournalRequest;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 /**
  * @author: GaoJean

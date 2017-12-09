@@ -1,13 +1,8 @@
 package com.journal.web.service.user;
 
-import java.util.List;
+import com.journal.web.entity.response.user.LoginResponse;
 
 import javax.servlet.http.HttpServletRequest;
-
-import org.springframework.stereotype.Component;
-
-import com.journal.web.dao.dto.UserDTO;
-import com.journal.web.entity.response.user.LoginResponse;
 
 /**
  * @author: GaoJean
@@ -16,7 +11,6 @@ import com.journal.web.entity.response.user.LoginResponse;
  * @date: 2017/10/28
  */
 public interface UserService {
-
     /**
      * 登录
      * @param username
@@ -29,8 +23,11 @@ public interface UserService {
 
     /**
      * 批量新增用户
+     *
      * @param userExtList
      * @return
-     */
-    int addUser(List<UserDTO> userExtList);
+     *//*
+    default int addUser(List<UserDTO> userExtList) {
+        return 0;
+    }*/
 }

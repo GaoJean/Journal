@@ -1,10 +1,14 @@
 package com.journal.common.verify;
 
-import java.lang.reflect.Method;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
+import com.journal.common.constant.Constant;
+import com.journal.common.constant.SystemEnum;
+import com.journal.common.exception.ReLoginException;
+import com.journal.common.exception.TokenException;
+import com.journal.common.logger.Logger;
+import com.journal.common.logger.LoggerFactory;
+import com.journal.web.model.AppServerModel;
+import com.journal.web.model.ResultModel;
+import com.journal.web.model.ResultModelMetadata;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -15,15 +19,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.journal.common.constant.Constant;
-import com.journal.common.constant.SystemEnum;
-import com.journal.common.exception.ReLoginException;
-import com.journal.common.exception.TokenException;
-import com.journal.common.logger.Logger;
-import com.journal.common.logger.LoggerFactory;
-import com.journal.web.model.AppServerModel;
-import com.journal.web.model.ResultModel;
-import com.journal.web.model.ResultModelMetadata;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.lang.reflect.Method;
 
 
 /**

@@ -1,17 +1,18 @@
 package com.journal.web.controller.user;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-
-import org.springframework.web.bind.annotation.*;
-
 import com.journal.common.verify.Verification;
 import com.journal.web.adaptor.user.UserAdaptor;
 import com.journal.web.entity.request.user.LoginRequest;
 import com.journal.web.entity.response.user.LoginResponse;
 import com.journal.web.model.ResultModel;
-
 import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author: GaoJean

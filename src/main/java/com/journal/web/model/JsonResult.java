@@ -76,7 +76,7 @@ public class JsonResult<T> implements Serializable {
      * <p>Title: toString</p> 
      * <p>Description: </p> 
      * @return 
-     * @see java.lang.Object#toString() 
+     * @see Object#toString()
      */
     @Override
     public String toString()

@@ -1,17 +1,18 @@
 package com.journal.web.controller.journal;
 
-import javax.annotation.Resource;
-
-import org.springframework.web.bind.annotation.*;
-
 import com.journal.common.verify.Verification;
 import com.journal.web.adaptor.journal.JournalAdaptor;
 import com.journal.web.entity.BaseResponse;
 import com.journal.web.entity.request.journal.GetAllJournalsRequest;
 import com.journal.web.entity.request.journal.WriteJournalRequest;
 import com.journal.web.model.ResultModel;
-
 import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @author: GaoJean

@@ -2,7 +2,6 @@ package com.journal.web.entity.request.user;
 
 
 import com.journal.web.entity.BaseRequest;
-
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.List;

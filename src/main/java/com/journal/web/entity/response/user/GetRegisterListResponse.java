@@ -2,6 +2,8 @@ package com.journal.web.entity.response.user;
 
 
 import com.journal.web.entity.BaseResponse;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.List;
@@ -12,6 +14,8 @@ import java.util.List;
  * @Description: TODO
  * @date: 2017/11/2
  */
+@Setter
+@Getter
 public class GetRegisterListResponse extends BaseResponse {
 
     //单例模式  利用了classloader的机制来保证初始化instance时只有一个线程，所以也是线程安全的，同时没有性能损耗
@@ -43,69 +47,7 @@ public class GetRegisterListResponse extends BaseResponse {
 
         private Date createTime;
 
-        public String getRehisterId() {
-            return rehisterId;
-        }
-
-        public void setRehisterId(String rehisterId) {
-            this.rehisterId = rehisterId;
-        }
-
-        public String getRoleId() {
-            return roleId;
-        }
-
-        public void setRoleId(String roleId) {
-            this.roleId = roleId;
-        }
-
-        public String getUserAccount() {
-            return userAccount;
-        }
-
-        public void setUserAccount(String userAccount) {
-            this.userAccount = userAccount;
-        }
-
-        public String getUserPassword() {
-            return userPassword;
-        }
-
-        public void setUserPassword(String userPassword) {
-            this.userPassword = userPassword;
-        }
-
-        public String getUserTel() {
-            return userTel;
-        }
-
-        public void setUserTel(String userTel) {
-            this.userTel = userTel;
-        }
-
-        public String getRegisterStatus() {
-            return registerStatus;
-        }
-
-        public void setRegisterStatus(String registerStatus) {
-            this.registerStatus = registerStatus;
-        }
-
-        public Date getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(Date createTime) {
-            this.createTime = createTime;
-        }
     }
 
-    public List<RegisterModel> getRegisterList() {
-        return registerList;
-    }
-
-    public void setRegisterList(List<RegisterModel> registerList) {
-        this.registerList = registerList;
-    }
 }
 
