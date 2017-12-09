@@ -1,5 +1,7 @@
 package com.journal.web.adaptor.user;
 import com.journal.web.entity.response.user.LoginResponse;
+import com.journal.web.service.user.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +18,10 @@ import static com.journal.common.constant.Constant.SESSION_AND_COOKIE.*;
  */
 @Component
 public class UserAdaptor {
+
+
+    @Autowired
+    private UserService userService;
 
     private void initLoginResponse(HttpServletRequest request, LoginResponse loginResponse) {
         HttpSession session = request.getSession();
@@ -49,6 +55,7 @@ public class UserAdaptor {
        } else if (resultMap.get("01") != null){
 
        }*/
+        userService.login(username,password,request,loginResponse);
         return "";
 
     }

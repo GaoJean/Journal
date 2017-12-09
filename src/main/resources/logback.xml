@@ -18,9 +18,9 @@
     <property name="LOG_HOME" value="/logs/Journal" />
     <!-- 控制台输出 -->   
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder"> 
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder" charset="UTF-8">
              <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符--> 
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{100}:%replace(%msg){'^(.{100000}).*$', '$1...'}%n</pattern>   
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{100}:%replace(%msg){'^(.{100000}).*$', '$1...'}%n</pattern>
         </encoder> 
     </appender>
     <!-- 按照每天生成日志文件 -->   
@@ -31,9 +31,10 @@
             <!--日志文件保留天数-->
             <MaxHistory>30</MaxHistory>
         </rollingPolicy>   
-        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder"> 
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder" charset="UTF-8">
             <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符--> 
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{100}:%replace(%msg){'^(.{100000}).*$', '$1...'}%n</pattern>   
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{100}:%replace(%msg){'^(.{100000}).*$', '$1...'}%n</pattern>
+            <charset>UTF-8</charset>
         </encoder> 
     </appender> 
            

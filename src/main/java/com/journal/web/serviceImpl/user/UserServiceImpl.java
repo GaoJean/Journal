@@ -1,7 +1,11 @@
 package com.journal.web.serviceImpl.user;
 
+import com.journal.web.DTO.UserDTO;
 import com.journal.web.entity.response.user.LoginResponse;
+import com.journal.web.mapper.UserDTOMapper;
 import com.journal.web.service.user.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,7 +15,11 @@ import javax.servlet.http.HttpServletRequest;
  * @Description: 用户实现类
  * @date: 2017/10/28
  */
+@Service("userService")
 public class UserServiceImpl implements UserService {
+
+    @Autowired
+    private UserDTOMapper userDTOMapper;
     /**
      * 登录
      *
@@ -47,5 +55,7 @@ public class UserServiceImpl implements UserService {
             }
         }*/
 
+        UserDTO userDTO = userDTOMapper.selectByPrimaryKey("1");
+        System.out.println(userDTO.getUserAccount());
     }
 }
