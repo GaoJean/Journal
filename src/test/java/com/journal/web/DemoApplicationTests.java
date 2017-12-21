@@ -9,7 +9,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class DemoApplicationTests {
 
-	@Test
+	//期待出现指定异常，若没有出现，则失败
+	@Test(expected = Exception.class)
 	public void contextLoads() {
 	}
 
