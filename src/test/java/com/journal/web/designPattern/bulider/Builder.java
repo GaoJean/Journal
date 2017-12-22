@@ -18,10 +18,7 @@ public class Builder {
 		}
 	}
 	
-	public String toString() {
-		for (Sender sender : senders) {
-			sender.Send();
-		}
-		return "";
+	public List<Sender> getSenders(){
+		return this.senders;
 	}
 }
