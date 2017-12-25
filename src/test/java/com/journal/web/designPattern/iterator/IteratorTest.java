@@ -10,7 +10,7 @@ public class IteratorTest {
 
 	public static void main(String[] args) {
 		Collection collection = new MyCollection();
-		Iterator iterator = new MyIterator(collection);
+		Iterator iterator = new MyIterator(collection);//相当于模拟了一个集合类
 		
 		while (iterator.hasNext()) {
 			System.out.println(iterator.next());
