@@ -5,7 +5,7 @@ package com.journal.web.designPattern.interpreter;
  * @author Jianjian
  *
  */
-public class Interpreter {
+public class InterpreterTest {
 	public static void main(String[] args) {
 
 		// 计算9+2-8的值
