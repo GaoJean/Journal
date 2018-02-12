@@ -1,11 +1,12 @@
 package com.journal.web.entity.request.journal;
 
-import com.journal.web.entity.BaseRequest;
+import java.io.Serializable;
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
+import com.journal.web.entity.BaseRequest;
 
 /**
  * @author: GaoJean
@@ -15,16 +16,18 @@ import java.util.List;
  */
 @Getter
 @Setter
-public class GetAllJournalsRequest extends BaseRequest {
+public class GetAllJournalsRequest extends BaseRequest implements Serializable{
 
-    /**
-     * 
-     */
-    private static final long serialVersionUID = -697730414640957971L;
-    @ApiModelProperty(value="登录密码")
-    private String timeSort;//降序 desc  升序 asc
-    @ApiModelProperty(value="登录密码")
-    private List<String> tagList;//标签集合
-    @ApiModelProperty(value="登录密码")
-    private String department;//部门
+	private static final long serialVersionUID = -697730414640957971L;
+	@ApiModelProperty(value = "时间排序")
+	private String timeSort;// 降序-01; 升序-02
+	
+	@ApiModelProperty(value = "查询起始时间")
+	private String startTime;// 查询起始时间
+	
+	@ApiModelProperty(value = "查询结束时间")
+	private String endTime;// 查询结束时间
+	
+	@ApiModelProperty(value = "用户id")
+	private String userId;// 用户id
 }

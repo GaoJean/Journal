@@ -1,4 +1,4 @@
-package com.journal.web.redis;
+/*package com.journal.web.redis;
 
 import java.util.concurrent.TimeUnit;
 
@@ -50,3 +50,4 @@ public class TestRedis {
     }
 
 }
+*/

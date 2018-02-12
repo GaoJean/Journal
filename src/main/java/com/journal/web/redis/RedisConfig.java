@@ -1,4 +1,4 @@
-package com.journal.web.redis;
+/*package com.journal.web.redis;
 
 import java.lang.reflect.Method;
 
@@ -60,4 +60,4 @@ public class RedisConfig extends CachingConfigurerSupport{
         return template;
     }
 
-}
+}*/

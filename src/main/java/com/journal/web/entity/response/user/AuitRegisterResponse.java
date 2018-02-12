@@ -2,9 +2,11 @@ package com.journal.web.entity.response.user;
 
 
 import com.journal.web.entity.BaseResponse;
+
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -15,8 +17,10 @@ import java.util.Date;
  */
 @Getter
 @Setter
-public class AuitRegisterResponse extends BaseResponse {
-    private String rehisterId;
+public class AuitRegisterResponse extends BaseResponse implements Serializable{
+	private static final long serialVersionUID = -1551705487082955596L;
+
+	private String rehisterId;
 
     private String roleId;
 

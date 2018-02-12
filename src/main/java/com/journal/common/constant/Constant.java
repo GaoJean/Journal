@@ -10,6 +10,11 @@ public class Constant {
     public static final int    PAGE_CURRENT       = 1;
     /** 分页每页显示的记录数 **/
     public static final int    PAGE_SIZE          = 100;
+    
+    /**逻辑删除**/
+	public static final String HAVA_LOGIC_DELETE = "99";
+	/**正常**/
+	public static final String NOT_LOGIC_DELETE = "01";
 
     public static interface ServiceCode {
         //controller返回接口业务状态码
@@ -48,14 +53,10 @@ public class Constant {
         String SESSION_USER_PORTRAIT_URL     ="session_user_PortraitUrl";
     }
 
-
-    public static interface  ROLE{
-        //管理员
-        public static final String ROLE_ADMIN = "1";
-        //普通用户
-        public static final String ROLE_USER = "2";
+    public static class Delete{
+    	public static final String NOT_LOGIC_DELETE = "01";
+    	public static final String LOGIC_DELETE = "99";
     }
-
     public static interface  APPROVAL_STATUS{
         //审批中
         public static final  String APPROVAL_PENDING = "1";
