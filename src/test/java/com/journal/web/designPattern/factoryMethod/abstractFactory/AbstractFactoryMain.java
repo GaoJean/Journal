@@ -1,4 +1,4 @@
-package com.journal.web.designPattern.abstractFactory;
+package com.journal.web.designPattern.factoryMethod.abstractFactory;
 
 /**
  * 抽象工厂模式

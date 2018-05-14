@@ -1,10 +1,11 @@
 package com.journal.web.entity.response.user;
 
-
 import com.journal.web.entity.BaseResponse;
+
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -16,38 +17,39 @@ import java.util.List;
  */
 @Setter
 @Getter
-public class GetRegisterListResponse extends BaseResponse {
+public class GetRegisterListResponse extends BaseResponse implements Serializable{
 
-    //单例模式  利用了classloader的机制来保证初始化instance时只有一个线程，所以也是线程安全的，同时没有性能损耗
-    private GetRegisterListResponse() {
-    }
+	private static final long serialVersionUID = -3063197189575421400L;
 
-    private static class LazyHolder {
-        private static final GetRegisterListResponse INSTANCE = new GetRegisterListResponse();
-    }
+	// 单例模式 利用了classloader的机制来保证初始化instance时只有一个线程，所以也是线程安全的，同时没有性能损耗
+	private GetRegisterListResponse() {
+	}
 
-    public static final GetRegisterListResponse getInstance() {
-        return LazyHolder.INSTANCE;
-    }
+	private static class LazyHolder {
+		private static final GetRegisterListResponse INSTANCE = new GetRegisterListResponse();
+	}
 
-    private List<RegisterModel> registerList;
+	public static final GetRegisterListResponse getInstance() {
+		return LazyHolder.INSTANCE;
+	}
 
-    public static class RegisterModel {
-        private String rehisterId;
+	private List<RegisterModel> registerList;
 
-        private String roleId;
+	public static class RegisterModel {
+		private String rehisterId;
 
-        private String userAccount;
+		private String roleId;
 
-        private String userPassword;
+		private String userAccount;
 
-        private String userTel;
+		private String userPassword;
 
-        private String registerStatus;
+		private String userTel;
 
-        private Date createTime;
+		private String registerStatus;
 
-    }
+		private Date createTime;
+
+	}
 
 }
-

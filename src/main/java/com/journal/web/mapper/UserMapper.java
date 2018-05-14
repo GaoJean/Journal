@@ -1,8 +1,10 @@
 package com.journal.web.mapper;
 
-import com.journal.web.DTO.UserDTO;
+import java.util.Map;
 
-public interface UserDTOMapper {
+import com.journal.web.dto.UserDTO;
+
+public interface UserMapper {
     int deleteByPrimaryKey(String userId);
 
     int insert(UserDTO record);
@@ -14,4 +16,6 @@ public interface UserDTOMapper {
     int updateByPrimaryKeySelective(UserDTO record);
 
     int updateByPrimaryKey(UserDTO record);
+    
+    UserDTO login(Map<String, Object> params);
 }

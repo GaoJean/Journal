@@ -1,4 +1,4 @@
-package com.journal.web.designPattern.abstractFactory;
+package com.journal.web.designPattern.factoryMethod.abstractFactory;
 
 public class MailSender implements Sender{
 

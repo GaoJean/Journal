@@ -1,10 +1,14 @@
 package com.journal.web.entity.request.user;
 
-
 import com.journal.web.entity.BaseRequest;
+
 import io.swagger.annotations.ApiModelProperty;
 
+import java.io.Serializable;
 import java.util.List;
+
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author: GaoJean
@@ -12,38 +16,17 @@ import java.util.List;
  * @Description: TODO
  * @date: 2017/11/2
  */
-public class AuitRegisterRequest extends BaseRequest {
+@Getter
+@Setter
+public class AuitRegisterRequest extends BaseRequest implements Serializable{
 
-    private List<AuitRegister> auitRegisterList;
+	private static final long serialVersionUID = -3214673077131113929L;
+	private List<AuitRegister> auitRegisterList;
 
-    public static class AuitRegister{
-        @ApiModelProperty(value="登录密码")
-        private String rehisterId;
-        @ApiModelProperty(value="登录密码")
-        private String auitStatus;
-
-        public String getRehisterId() {
-            return rehisterId;
-        }
-
-        public void setRehisterId(String rehisterId) {
-            this.rehisterId = rehisterId;
-        }
-
-        public String getAuitStatus() {
-            return auitStatus;
-        }
-
-        public void setAuitStatus(String auitStatus) {
-            this.auitStatus = auitStatus;
-        }
-    }
-
-    public List<AuitRegister> getAuitRegisterList() {
-        return auitRegisterList;
-    }
-
-    public void setAuitRegisterList(List<AuitRegister> auitRegisterList) {
-        this.auitRegisterList = auitRegisterList;
-    }
+	public static class AuitRegister {
+		@ApiModelProperty(value = "登录密码")
+		private String rehisterId;
+		@ApiModelProperty(value = "登录密码")
+		private String auitStatus;
+	}
 }
