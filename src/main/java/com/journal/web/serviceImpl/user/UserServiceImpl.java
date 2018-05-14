@@ -1,11 +1,15 @@
 package com.journal.web.serviceImpl.user;
 
+import com.journal.web.DTO.HealthplanTreatmentDietEntity;
 import com.journal.web.DTO.UserDTO;
 import com.journal.web.entity.response.user.LoginResponse;
+import com.journal.web.mapper.HealthplanTreatmentDietDao;
 import com.journal.web.mapper.UserDTOMapper;
 import com.journal.web.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,6 +24,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDTOMapper userDTOMapper;
+    
+    @Autowired
+    private HealthplanTreatmentDietDao healthDao;
     /**
      * 登录
      *
@@ -57,5 +64,24 @@ public class UserServiceImpl implements UserService {
 
         UserDTO userDTO = userDTOMapper.selectByPrimaryKey("1");
         System.out.println(userDTO.getUserAccount());
+    }
+    /* (non-Javadoc)
+     * @see com.journal.web.service.user.UserService#insert()
+     */
+    @Override
+    public int insert() {
+        HealthplanTreatmentDietEntity record = new HealthplanTreatmentDietEntity();
+        Byte de = 0;
+        record.setId(100l);
+        record.setEndDay(1);
+        record.setGmtCreate(new Date());
+        record.setGmtModified(new Date());
+        record.setIsDelete(de);
+        record.setSolutionId(1l);
+        record.setStartDay(1);
+        record.setSuggestion("no");
+        record.setSuggestionDesc("desc");
+        record.setTheme("theme");
+        return healthDao.insert(record);
     }
 }

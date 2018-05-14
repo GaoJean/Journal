@@ -20,6 +20,11 @@ public interface UserService {
      */
     void login(String username, String password, HttpServletRequest request, LoginResponse response);
 
+    /**
+     * @return
+     */
+    int insert();
+
 
     /**
      * 批量新增用户
